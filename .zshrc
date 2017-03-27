@@ -75,6 +75,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+KEYTIMEOUT=1
+
 DEFAULT_USER=reuben
+alias vi=nvim
 alias vim=nvim
 EDITOR=vim
