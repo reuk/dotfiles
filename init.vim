@@ -26,6 +26,7 @@ set hlsearch incsearch magic showmatch
 set showcmd cursorline wildmenu lazyredraw termguicolors laststatus=2
 set tabstop=2 shiftwidth=2 softtabstop=2 colorcolumn=80 cmdheight=2
 set spelllang=en_gb
+set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 
 " Enable spell checking in markdown files
 au FileType markdown setlocal spell syntax=off
