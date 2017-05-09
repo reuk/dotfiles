@@ -10,6 +10,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'alessandroyorba/sidonia'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'vim-scripts/zenesque.vim'
 
 call plug#end()
 
@@ -24,14 +26,19 @@ set nostartofline smartindent expandtab
 set splitright splitbelow
 set hlsearch incsearch magic showmatch
 set showcmd cursorline wildmenu lazyredraw termguicolors laststatus=2
-set tabstop=2 shiftwidth=2 softtabstop=2 colorcolumn=80 cmdheight=2
+set tabstop=2 shiftwidth=2 softtabstop=2 cmdheight=2
 set spelllang=en_gb
+set colorcolumn=80
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 
 " Enable spell checking in markdown files
 au FileType markdown setlocal spell syntax=off
 
-colorscheme sidonia
+" colorscheme sidonia
+let g:zenesque_colors=2
+colorscheme zenesque
+
+highlight ColorColumn ctermbg=black guibg=black
 
 " Don't ask for confirmation when running ycm
 let g:ycm_confirm_extra_conf=0
