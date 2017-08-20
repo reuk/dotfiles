@@ -11,7 +11,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'dbgx/lldb.nvim'
-Plug 'vim-scripts/zenesque.vim'
+Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
@@ -27,17 +27,11 @@ set splitright splitbelow
 set hlsearch incsearch magic showmatch
 set showcmd cursorline wildmenu lazyredraw termguicolors laststatus=2
 set tabstop=2 shiftwidth=2 softtabstop=2 cmdheight=2
-set spelllang=en_gb
+set spell spelllang=en_gb
 set colorcolumn=80
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 
-" Enable spell checking in markdown files
-au FileType markdown setlocal spell syntax=off
-
-let g:zenesque_colors=2
-colorscheme zenesque
-
-highlight ColorColumn ctermbg=black guibg=black
+colorscheme base16-ashes
 
 " Don't ask for confirmation when running ycm
 let g:ycm_confirm_extra_conf=0
@@ -48,12 +42,11 @@ nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>gt :YcmCompleter GoTo<CR>
 
-"let g:ycm_path_to_python_interpreter="/usr/bin/python"
+let g:ycm_path_to_python_interpreter="/usr/bin/python"
 
 " Run clang-format when C-k is pressed
 augroup formatgroup
 autocmd!
-"autocmd FileType c,cpp map <C-K> :py3f /usr/local/share/clang/clang-format.py<cr>
 autocmd FileType c,cpp map <C-K> :py3f /usr/share/vim/addons/syntax/clang-format.py<cr>
 augroup END
 
