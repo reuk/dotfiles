@@ -10,8 +10,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'dbgx/lldb.nvim'
+Plug 'lu-ren/SerialExperimentsLain'
 Plug 'chriskempson/base16-vim'
+Plug 'dbgx/lldb.nvim'
 
 call plug#end()
 
@@ -43,6 +44,8 @@ nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>gt :YcmCompleter GoTo<CR>
 
 let g:ycm_path_to_python_interpreter="/usr/bin/python"
+
+nmap <M-b> <Plug>LLBreakSwitch
 
 " Run clang-format when C-k is pressed
 augroup formatgroup
