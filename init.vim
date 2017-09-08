@@ -34,6 +34,8 @@ set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr
 
 colorscheme base16-ashes
 
+hi Normal guibg=NONE ctermbg=NONE
+
 " Don't ask for confirmation when running ycm
 let g:ycm_confirm_extra_conf=0
 
