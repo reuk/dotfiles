@@ -10,9 +10,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'lu-ren/SerialExperimentsLain'
+Plug 'junegunn/fzf.vim'
 Plug 'chriskempson/base16-vim'
-Plug 'dbgx/lldb.nvim'
 
 call plug#end()
 
@@ -39,7 +38,7 @@ hi Normal guibg=NONE ctermbg=NONE
 " Don't ask for confirmation when running ycm
 let g:ycm_confirm_extra_conf=0
 
-let mapleader=","
+let mapleader = ","
 nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -47,7 +46,8 @@ nnoremap <leader>gt :YcmCompleter GoTo<CR>
 
 let g:ycm_path_to_python_interpreter="/usr/bin/python"
 
-nmap <M-b> <Plug>LLBreakSwitch
+nnoremap <leader>d :GFiles<cr>
+nnoremap <leader>f :Files<cr>
 
 " Run clang-format when C-k is pressed
 augroup formatgroup
@@ -58,3 +58,25 @@ augroup END
 " Show whitespace
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
 set list
+
+" This is the default extra key bindings
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
