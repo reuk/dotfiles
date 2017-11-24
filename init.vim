@@ -12,6 +12,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'chriskempson/base16-vim'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
