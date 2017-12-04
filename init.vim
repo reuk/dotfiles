@@ -8,13 +8,15 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
-Plug 'octol/vim-cpp-enhanced-highlight'
+"Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-fugitive'
 
 call plug#end()
+
+colorscheme base16-monokai
 
 filetype plugin indent on
 syntax on
@@ -31,13 +33,9 @@ set tabstop=2 shiftwidth=2 softtabstop=2 cmdheight=2
 set spell spelllang=en_gb
 set colorcolumn=80
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
+set belloff=all
 
-colorscheme base16-ashes
-
-hi Normal guibg=NONE ctermbg=NONE
-
-" Don't ask for confirmation when running ycm
-let g:ycm_confirm_extra_conf=0
+hi Normal guibg=nONE ctermbg=NONE
 
 let mapleader = ","
 nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
@@ -53,7 +51,7 @@ nnoremap <leader>f :Files<cr>
 " Run clang-format when C-k is pressed
 augroup formatgroup
 autocmd!
-autocmd FileType c,cpp map <C-K> :py3f /usr/share/vim/addons/syntax/clang-format.py<cr>
+autocmd FileType c,cpp map <C-K> :py3f /Users/reuben/bin/clang-format.py<cr>
 augroup END
 
 " Show whitespace
