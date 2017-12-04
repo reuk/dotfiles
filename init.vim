@@ -8,15 +8,15 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
-"Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'chriskempson/base16-vim'
-Plug 'tpope/vim-fugitive'
+Plug 'djjcast/mirodark'
 
 call plug#end()
 
-colorscheme base16-monokai
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+colorscheme mirodark
 
 filetype plugin indent on
 syntax on
