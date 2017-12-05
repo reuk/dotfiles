@@ -51,7 +51,7 @@ nnoremap <leader>f :Files<cr>
 " Run clang-format when C-k is pressed
 augroup formatgroup
 autocmd!
-autocmd FileType c,cpp map <C-K> :py3f /Users/reuben/bin/clang-format.py<cr>
+autocmd FileType c,cpp map <C-K> :py3f /home/reuben/clang-format.py<cr>
 augroup END
 
 " Show whitespace
