@@ -186,4 +186,3 @@ bar {
 exec compton --config ~/.config/compton.conf -b
 exec --no-startup-id ~/.fehbg
 exec --no-startup-id nm-applet
-exec --no-startup-id hamster-indicator
