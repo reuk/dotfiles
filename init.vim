@@ -29,7 +29,7 @@ set nostartofline smartindent expandtab
 set splitright splitbelow
 set hlsearch incsearch magic showmatch
 set showcmd cursorline wildmenu lazyredraw termguicolors laststatus=2
-set tabstop=2 shiftwidth=2 softtabstop=2 cmdheight=2
+set tabstop=4 shiftwidth=4 softtabstop=4 cmdheight=2
 set spell spelllang=en_gb
 set colorcolumn=80
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
@@ -44,6 +44,8 @@ nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>gt :YcmCompleter GoTo<CR>
 
 let g:ycm_path_to_python_interpreter="/usr/bin/python"
+let g:python2_host_prog = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
 
 nnoremap <leader>d :GFiles<cr>
 nnoremap <leader>f :Files<cr>
@@ -51,12 +53,15 @@ nnoremap <leader>f :Files<cr>
 " Run clang-format when C-k is pressed
 augroup formatgroup
 autocmd!
-autocmd FileType c,cpp map <C-K> :py3f /usr/share/vim/addons/syntax/clang-format.py<cr>
+autocmd FileType c,cpp map <C-K> :py3f /usr/local/Cellar/clang-format/2017-11-14/share/clang/clang-format.py<cr>
 augroup END
 
 " Show whitespace
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
 set list
+
+" Strip whitespace when saving CPP files
+autocmd FileType c,cpp autocmd BufWritePre <buffer> %s/\s\+$//e
 
 " This is the default extra key bindings
 let g:fzf_action = {
