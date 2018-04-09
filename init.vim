@@ -8,15 +8,17 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
-Plug 'octol/vim-cpp-enhanced-highlight'
+"Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'djjcast/mirodark'
+"Plug 'djjcast/mirodark'
+Plug 'vim-scripts/cleanroom'
 
 call plug#end()
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-colorscheme mirodark
+"colorscheme mirodark
+colorscheme cleanroom
 
 filetype plugin indent on
 syntax on
@@ -35,7 +37,7 @@ set colorcolumn=80
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 set belloff=all
 
-hi Normal guibg=nONE ctermbg=NONE
+hi Normal guibg=NONE ctermbg=NONE
 
 let mapleader = ","
 nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
@@ -43,9 +45,7 @@ nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>gt :YcmCompleter GoTo<CR>
 
-let g:ycm_path_to_python_interpreter="/usr/bin/python"
-let g:python2_host_prog = '/usr/local/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:ycm_server_python_interpreter="/usr/local/bin/python3"
 
 nnoremap <leader>d :GFiles<cr>
 nnoremap <leader>f :Files<cr>
@@ -53,7 +53,7 @@ nnoremap <leader>f :Files<cr>
 " Run clang-format when C-k is pressed
 augroup formatgroup
 autocmd!
-autocmd FileType c,cpp map <C-K> :py3f /usr/local/Cellar/clang-format/2017-11-14/share/clang/clang-format.py<cr>
+autocmd FileType c,cpp map <C-K> :py3f /Users/reuben/bin/clang-format.py<cr>
 augroup END
 
 " Show whitespace
