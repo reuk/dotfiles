@@ -7,7 +7,7 @@ endif
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
