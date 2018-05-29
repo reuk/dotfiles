@@ -11,14 +11,14 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 "Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-"Plug 'djjcast/mirodark'
+Plug 'djjcast/mirodark'
 Plug 'vim-scripts/cleanroom'
 
 call plug#end()
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-"colorscheme mirodark
-colorscheme cleanroom
+colorscheme mirodark
+"colorscheme cleanroom
 
 filetype plugin indent on
 syntax on
