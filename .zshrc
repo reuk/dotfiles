@@ -1,13 +1,11 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$PATH
+export PATH=/usr/local/opt/ccache/libexec:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/reuk/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="flazz"
+ZSH_THEME="gallois"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,7 +49,7 @@ ZSH_THEME="flazz"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git vi-mode zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -86,7 +84,6 @@ source $ZSH/oh-my-zsh.sh
 
 KEYTIMEOUT=1
 
-DEFAULT_USER=reuben
 alias vi=nvim
 alias vim=nvim
 EDITOR=vim

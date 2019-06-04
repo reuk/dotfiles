@@ -8,10 +8,10 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
-Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'djjcast/mirodark'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'djjcast/mirodark'
+Plug 'vim-scripts/cleanroom'
 
 call plug#end()
 
@@ -25,17 +25,19 @@ syntax on
 match Error '\s\+$'
 
 set ruler number
-set nostartofline smartindent expandtab
+set nostartofline autoindent smartindent expandtab
 set splitright splitbelow
 set hlsearch incsearch magic showmatch
 set showcmd cursorline wildmenu lazyredraw termguicolors laststatus=2
-set tabstop=2 shiftwidth=2 softtabstop=2 cmdheight=2
+set tabstop=4 shiftwidth=4 softtabstop=4 cmdheight=2
 set spell spelllang=en_gb
-set colorcolumn=80
+set colorcolumn=100
+set textwidth=100
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 set belloff=all
+set nojoinspaces
 
-hi Normal guibg=nONE ctermbg=NONE
+hi Normal guibg=NONE ctermbg=NONE
 
 let mapleader = ","
 nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
@@ -43,20 +45,25 @@ nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>gt :YcmCompleter GoTo<CR>
 
-let g:ycm_path_to_python_interpreter="/usr/bin/python"
-
-nnoremap <leader>d :GFiles<cr>
-nnoremap <leader>f :Files<cr>
+let g:ycm_server_python_interpreter="/usr/local/bin/python3"
 
 " Run clang-format when C-k is pressed
 augroup formatgroup
 autocmd!
-autocmd FileType c,cpp map <C-K> :py3f /home/reuben/clang-format.py<cr>
+autocmd FileType c,cpp map <C-K> :py3f /home/reuk/clang-format.py<cr>
 augroup END
 
 " Show whitespace
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
 set list
+
+" Strip whitespace when saving CPP or ruby files
+autocmd FileType c,cpp,ruby autocmd BufWritePre <buffer> %s/\s\+$//e
+
+let g:fzf_tags_command = 'ctags --extra=+f -R'
+nnoremap <leader>d :GFiles<cr>
+nnoremap <leader>f :Files<cr>
+nnoremap <leader>t :Tags<cr>
 
 " This is the default extra key bindings
 let g:fzf_action = {
@@ -79,3 +86,6 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+
+" wiki config
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
