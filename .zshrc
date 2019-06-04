@@ -1,10 +1,11 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$PATH
+export PATH=/usr/local/opt/ccache/libexec:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/spare/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
-ZSH_THEME="flazz"
+ZSH_THEME="gallois"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -83,7 +84,6 @@ source $ZSH/oh-my-zsh.sh
 
 KEYTIMEOUT=1
 
-DEFAULT_USER=reuben
 alias vi=nvim
 alias vim=nvim
 EDITOR=vim
