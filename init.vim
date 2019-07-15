@@ -29,7 +29,7 @@ set nostartofline autoindent smartindent expandtab
 set splitright splitbelow
 set hlsearch incsearch magic showmatch
 set showcmd cursorline wildmenu lazyredraw termguicolors laststatus=2
-set tabstop=4 shiftwidth=4 softtabstop=4 cmdheight=2
+set tabstop=2 shiftwidth=2 softtabstop=2 cmdheight=2
 set spell spelllang=en_gb
 set colorcolumn=100
 set textwidth=100
@@ -50,7 +50,7 @@ let g:ycm_server_python_interpreter="/usr/local/bin/python3"
 " Run clang-format when C-k is pressed
 augroup formatgroup
 autocmd!
-autocmd FileType c,cpp map <C-K> :py3f /home/reuk/clang-format.py<cr>
+autocmd FileType c,cpp map <C-K> :py3f /usr/share/clang/clang-format.py<cr>
 augroup END
 
 " Show whitespace
