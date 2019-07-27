@@ -7,12 +7,16 @@ endif
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+function! BuildYCM(info)
+    if a:info.status == 'installed' || a:info.force
+        !./install.py --clangd-completer
+    endif
+endfunction
+
 Plug 'djjcast/mirodark'
-Plug 'jreybert/vimagit'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'vim-scripts/cleanroom'
+Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 
 call plug#end()
 
@@ -25,7 +29,6 @@ syntax on
 " Show trailing whitespace
 match Error '\s\+$'
 
-set ruler number
 set nostartofline autoindent smartindent expandtab
 set splitright splitbelow
 set hlsearch incsearch magic showmatch
@@ -46,12 +49,12 @@ nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>gt :YcmCompleter GoTo<CR>
 
-let g:ycm_server_python_interpreter="/usr/local/bin/python3"
+let g:ycm_server_python_interpreter="/usr/local/bin/python2"
 
 " Run clang-format when C-k is pressed
 augroup formatgroup
 autocmd!
-autocmd FileType c,cpp map <C-K> :py3f /Users/reuk/bin/clang-format.py<cr>
+autocmd FileType c,cpp map <C-K> :py3f /Users/reuben/bin/clang-format.py<cr>
 augroup END
 
 " Show whitespace

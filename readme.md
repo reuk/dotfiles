@@ -1,11 +1,23 @@
-# dotfiles
+# reuk's dotfiles
 
-Files for getting neovim, tmux, and zsh to work nicely on Ubuntu.
+## vim ide setup notes
 
-Run make_links.sh from within this folder to make symlinks to init.vim and
-tmux.conf. If you already have copies of these files, the script might fail, so
-you'll have to delete/move them manually.
+AppCode seems to have got real slow lately, so I'm going to look at getting a sane cpp dev
+environment working in nvim.
 
-# setting up keyboard on linux
+We're still building from Xcode projects, so we need a way to generate a complication database:
 
-Build and install xcape.
+```
+# install xcpretty
+gem install xcpretty
+
+# generate the database
+xcodebuild -configuration Debug -alltargets | xcpretty -r json-compilation-database
+```
+
+Get YCM set up and working (neovim requires python stuff to be set up)
+
+```
+pip2 install --user pynvim
+pip3 install --user pynvim
+```
