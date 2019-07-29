@@ -15,9 +15,15 @@ gem install xcpretty
 xcodebuild -configuration Debug -alltargets | xcpretty -r json-compilation-database
 ```
 
-Get YCM set up and working (neovim requires python stuff to be set up)
+Get ccls and coc.nvim up and working:
 
 ```
-pip2 install --user pynvim
-pip3 install --user pynvim
+brew install ccls
+```
+
+I guess there's some python stuff we need too:
+
+```
+pip2 install --user pynvim clang neovim-remote
+pip3 install --user pynvim clang neovim-remote
 ```

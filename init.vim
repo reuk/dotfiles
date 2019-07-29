@@ -7,16 +7,11 @@ endif
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-function! BuildYCM(info)
-    if a:info.status == 'installed' || a:info.force
-        !./install.py --clangd-completer
-    endif
-endfunction
-
 Plug 'djjcast/mirodark'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
@@ -48,8 +43,6 @@ nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>gt :YcmCompleter GoTo<CR>
-
-let g:ycm_server_python_interpreter="/usr/local/bin/python2"
 
 " Run clang-format when C-k is pressed
 augroup formatgroup
@@ -93,3 +86,7 @@ let g:fzf_colors =
 
 " wiki config
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+
+let g:lightline = {
+      \ 'colorscheme': 'PaperColor',
+      \ }
