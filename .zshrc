@@ -2,6 +2,9 @@
 export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/opt/ccache/libexec:$PATH
 
+# flutter stuff
+export PATH=$HOME/development/flutter/bin:$PATH
+
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
@@ -89,3 +92,13 @@ alias vim=nvim
 EDITOR=vim
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH=/Users/reuben/.gem/ruby/2.4.0/bin:$PATH
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="/usr/local/opt/node@10/bin:$PATH"
+export PATH="/usr/local/opt/node@10/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+# opam configuration
+test -r /Users/reuben/.opam/opam-init/init.zsh && . /Users/reuben/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+export PATH="/usr/local/opt/ruby@2.4/bin:$PATH"

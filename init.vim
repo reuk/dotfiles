@@ -10,8 +10,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'djjcast/mirodark'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'itchyny/lightline.vim'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -30,8 +30,8 @@ set hlsearch incsearch magic showmatch
 set showcmd cursorline wildmenu lazyredraw termguicolors laststatus=2
 set tabstop=4 shiftwidth=4 softtabstop=4 cmdheight=2
 set spell spelllang=en_gb
-set colorcolumn=100
-set textwidth=100
+set colorcolumn=80
+set textwidth=80
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 set belloff=all
 set nojoinspaces
@@ -84,9 +84,19 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 
-" wiki config
-let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
-
+" Lightline config
 let g:lightline = {
       \ 'colorscheme': 'PaperColor',
       \ }
+
+" coc.nvim config
+" set updatetime=300
+" set hidden
+" set signcolumn=yes
+" inoremap <silent><expr> <c-space> coc#refresh()
+" autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" nmap <silent> gd <Plug>(coc-definition)
+" nmap <silent> gy <Plug>(coc-type-definition)
+" nmap <silent> gi <Plug>(coc-implementation)
+" nmap <silent> gr <Plug>(coc-references)
