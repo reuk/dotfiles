@@ -11,7 +11,6 @@ Plug 'djjcast/mirodark'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -31,7 +30,7 @@ set showcmd cursorline wildmenu lazyredraw termguicolors laststatus=2
 set tabstop=4 shiftwidth=4 softtabstop=4 cmdheight=2
 set spell spelllang=en_gb
 set colorcolumn=80
-set textwidth=80
+"set textwidth=80
 set guicursor=n-v-c:block-Cursor/lCursor-blinkon0,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor
 set belloff=all
 set nojoinspaces
@@ -47,7 +46,7 @@ nnoremap <leader>gt :YcmCompleter GoTo<CR>
 " Run clang-format when C-k is pressed
 augroup formatgroup
 autocmd!
-autocmd FileType c,cpp map <C-K> :py3f /Users/reuben/bin/clang-format.py<cr>
+autocmd FileType c,cpp map <C-K> :py3f /Users/reuk/bin/clang-format.py<cr>
 augroup END
 
 " Show whitespace
@@ -88,15 +87,3 @@ let g:fzf_colors =
 let g:lightline = {
       \ 'colorscheme': 'PaperColor',
       \ }
-
-" coc.nvim config
-" set updatetime=300
-" set hidden
-" set signcolumn=yes
-" inoremap <silent><expr> <c-space> coc#refresh()
-" autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" nmap <silent> gd <Plug>(coc-definition)
-" nmap <silent> gy <Plug>(coc-type-definition)
-" nmap <silent> gi <Plug>(coc-implementation)
-" nmap <silent> gr <Plug>(coc-references)
