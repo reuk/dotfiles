@@ -16,7 +16,8 @@ EDITOR="${VISUAL}"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+export GPG_TTY=$(tty)
 export PATH=$HOME/bin:$PATH
 export PATH="/usr/local/opt/ruby@2.4/bin:$PATH"
-
-export GPG_TTY=$(tty)
+export PATH="/usr/local/opt/llvm/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
