@@ -11,7 +11,6 @@ Plug 'djjcast/mirodark'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clangd-completer' }
 
 call plug#end()
 
