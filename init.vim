@@ -55,7 +55,7 @@ set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
 set list
 
 " Strip whitespace when saving CPP or ruby files
-autocmd FileType c,cpp,ruby autocmd BufWritePre <buffer> %s/\s\+$//e
+autocmd FileType c,cpp,ruby,python,objc,objcpp autocmd BufWritePre <buffer> %s/\s\+$//e
 
 let g:fzf_tags_command = 'ctags --extra=+f -R'
 nnoremap <leader>d :GFiles<cr>

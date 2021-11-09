@@ -1,4 +1,3 @@
-
 export ZSH=~/.oh-my-zsh
 
 ZSH_THEME="gallois"
@@ -18,6 +17,3 @@ EDITOR="${VISUAL}"
 
 export GPG_TTY=$(tty)
 export PATH=$HOME/bin:$PATH
-export PATH="/usr/local/opt/ruby@2.4/bin:$PATH"
-export PATH="/usr/local/opt/llvm/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
