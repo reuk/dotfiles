@@ -1,6 +1,6 @@
 export ZSH=~/.oh-my-zsh
 
-ZSH_THEME="gallois"
+ZSH_THEME="bira"
 
 plugins=(git vi-mode)
 
