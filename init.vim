@@ -38,10 +38,6 @@ set nojoinspaces
 hi Normal guibg=NONE ctermbg=NONE
 
 let mapleader = ","
-nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
-nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nnoremap <leader>gt :YcmCompleter GoTo<CR>
 
 " Run clang-format when C-k is pressed
 augroup formatgroup
