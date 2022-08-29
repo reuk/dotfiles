@@ -42,15 +42,15 @@ let mapleader = ","
 " Run clang-format when C-k is pressed
 augroup formatgroup
 autocmd!
-autocmd FileType c,cpp map <C-K> :py3f /Users/reuk/bin/clang-format.py<cr>
+autocmd FileType c,cpp,objcpp map <C-K> :py3f /Users/reuk/bin/clang-format.py<cr>
 augroup END
 
 " Show whitespace
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
 set list
 
-" Strip whitespace when saving CPP or ruby files
-autocmd FileType c,cpp,ruby,python,objc,objcpp autocmd BufWritePre <buffer> %s/\s\+$//e
+" Strip whitespace when saving source files
+autocmd FileType c,cpp,ruby,python,objc,objcpp,cmake autocmd BufWritePre <buffer> %s/\s\+$//e
 
 let g:fzf_tags_command = 'ctags --extra=+f -R'
 nnoremap <leader>d :GFiles<cr>

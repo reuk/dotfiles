@@ -17,3 +17,5 @@ EDITOR="${VISUAL}"
 
 export GPG_TTY=$(tty)
 export PATH=$HOME/bin:$PATH
+
+gs() { git switch $(git branch | fzf | tr -d '*[:space:]') }
