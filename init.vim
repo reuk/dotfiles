@@ -8,6 +8,7 @@ endif
 call plug#begin()
 
 Plug 'djjcast/mirodark'
+Plug 'vim-scripts/cleanroom'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
@@ -23,6 +24,7 @@ syntax on
 " Show trailing whitespace
 match Error '\s\+$'
 
+set ruler
 set nostartofline autoindent smartindent expandtab
 set splitright splitbelow
 set hlsearch incsearch magic showmatch
