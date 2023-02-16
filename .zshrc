@@ -16,6 +16,8 @@ EDITOR="${VISUAL}"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export GPG_TTY=$(tty)
-export PATH=$HOME/bin:$PATH
+export PATH=/opt/homebrew/opt/ccache/libexec:$HOME/bin:$PATH
 
 gs() { git switch $(git branch | fzf | tr -d '*[:space:]') }
+
+export HOMEBREW_NO_ANALYTICS=1
