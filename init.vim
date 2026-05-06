@@ -7,7 +7,7 @@ endif
 
 call plug#begin()
 
-Plug 'djjcast/mirodark'
+Plug 'nyoom-engineering/oxocarbon.nvim'
 Plug 'vim-scripts/cleanroom'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -16,7 +16,7 @@ Plug 'itchyny/lightline.vim'
 call plug#end()
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-colorscheme mirodark
+colorscheme oxocarbon
 
 filetype plugin indent on
 syntax on
@@ -49,10 +49,12 @@ augroup END
 
 " Show whitespace
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
-set list
+" set list
 
 " Strip whitespace when saving source files
 autocmd FileType c,cpp,ruby,python,objc,objcpp,cmake autocmd BufWritePre <buffer> %s/\s\+$//e
+
+let g:python3_host_prog = '/opt/homebrew/bin/python3'
 
 let g:fzf_tags_command = 'ctags --extra=+f -R'
 nnoremap <leader>d :GFiles<cr>

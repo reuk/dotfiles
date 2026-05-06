@@ -5,6 +5,7 @@ ZSH_THEME="bira"
 plugins=(git vi-mode)
 
 source $ZSH/oh-my-zsh.sh
+source <(COMPLETE=zsh jj)
 
 KEYTIMEOUT=1
 
@@ -21,3 +22,10 @@ export PATH=/opt/homebrew/opt/ccache/libexec:$HOME/bin:$PATH
 gs() { git switch $(git branch | fzf | tr -d '*[:space:]') }
 
 export HOMEBREW_NO_ANALYTICS=1
+
+# Flutter stuff
+
+export PATH=$HOME/Developer/flutter/bin:$PATH
+export PATH=$HOME/.gem/bin:$PATH
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="/Users/reuk/.local/bin:$PATH"
