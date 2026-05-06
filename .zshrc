@@ -5,7 +5,6 @@ ZSH_THEME="bira"
 plugins=(git vi-mode)
 
 source $ZSH/oh-my-zsh.sh
-source <(COMPLETE=zsh jj)
 
 KEYTIMEOUT=1
 

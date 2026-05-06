@@ -8,7 +8,6 @@ endif
 call plug#begin()
 
 Plug 'nyoom-engineering/oxocarbon.nvim'
-Plug 'vim-scripts/cleanroom'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
